@@ -1,13 +1,15 @@
-const config = {
-  user: "guest",
-  password: "Citimax123",
-  server: "Citimax", // You can use 'localhost\\instance' to connect to named instance
-  database: "Allicom"
-};
-// const config = {
-//     user: "Genius",
-//     password: "KIMkim100%",
-//     server: "DESKTOP-DFM9GHI", // You can use 'localhost\\instance' to connect to named instance
-//     database: "Allicom"
-// };
-module.exports = config;
+var mysql = require("mysql");
+
+//local mysql db connection
+var connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "node"
+});
+
+connection.connect(function(err) {
+  if (err) throw err;
+});
+
+module.exports = connection;
